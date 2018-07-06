@@ -49,8 +49,17 @@ class LinearRegression:
         plt.title('Linear Regression')
         plt.show()
 
+    def predict(self, point):
+        return point[0] * self.m + self.b
+
+
 if __name__ == '__main__':
     lr = LinearRegression()
     lr.sample_data(samples=100, max_cor=100)
     lr.fit()
+
+    input = [2, 2]
+    y = lr.predict(input)
+    print('Prediction for {0}: {1}'.format(input, y))
+
     lr.show()
